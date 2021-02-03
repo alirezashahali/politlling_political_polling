@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: objection-mongo-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: objection-mongo
+  template:
+    metadata:
+      labels:
+        app: objection-mongo
+    spec:
+      containers:
+        - name: objection-mongo
+          image: mongo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: objection-mongo-srv
+spec:
+  selector:
+    app: objection-mongo
+  ports:
+    - name: db
+      protocol: TCP
+      port: 27017
+      targetPort: 27017

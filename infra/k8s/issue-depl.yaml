@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: issue-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: issue
+  template:
+    metadata:
+      labels:
+        app: issue
+    spec:
+      containers:
+        - name: issue
+          image: kingali/politling_issue
+          env:
+            - name: MONGO_URI
+              value: "mongodb://issue-mongo-srv:27017/issue"
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_KEY
+            - name: NATS_CLIENT_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: NATS_URL
+              value: "http://nats-srv:4222"
+            - name: NATS_CLUSTER_ID
+              value: "politling"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: issue-srv
+spec:
+  selector:
+    app: issue
+  ports:
+    - name: issue
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

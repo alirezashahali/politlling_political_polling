@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: objection-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: objection
+  template:
+    metadata:
+      labels:
+        app: objection
+    spec:
+      containers:
+        - name: objection
+          image: kingali/politling_objection
+          env:
+            - name: MONGO_URI
+              value: "mongodb://objection-mongo-srv:27017/objection"
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_KEY
+            - name: NATS_CLIENT_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: NATS_URL
+              value: "http://nats-srv:4222"
+            - name: NATS_CLUSTER_ID
+              value: "politling"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: objection-srv
+spec:
+  selector:
+    app: objection
+  ports:
+    - name: objection
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-07T14:26:12.676Z" agent="5.0 (Windows)" etag="ykV1NhK_Rz2mjGGuA2rT" version="14.2.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-02-07T22:22:49.373Z" agent="5.0 (Windows)" etag="qUm9kQfQFm3u33_yDR2R" version="14.2.9" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="868" dy="1620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -289,11 +289,11 @@
         <mxCell id="UheMjuMVvRFDNfOyZ5eY-11" value="Service for checking if the time of like collection is up" style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="440" y="-396" width="320" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="tyq_wy61kWTudvRGBjyL-7" value="" style="group;fillColor=#f8cecc;strokeColor=#B85450;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1" connectable="0">
-          <mxGeometry x="50" y="1120" width="180" height="125" as="geometry" />
+        <mxCell id="SgAOrooT0bdf1HEzyei0-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="80" y="750" width="390" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="tyq_wy61kWTudvRGBjyL-8" value="" style="group" parent="tyq_wy61kWTudvRGBjyL-7" vertex="1" connectable="0">
-          <mxGeometry width="180" height="125" as="geometry" />
+        <mxCell id="SgAOrooT0bdf1HEzyei0-2" value="&lt;div&gt;objection and comment service does not care about the other&lt;/div&gt;&lt;div&gt;services so when you want to get the objections and comments of&lt;/div&gt;&lt;div&gt;other services you should ask for them from respective service&lt;br&gt;&lt;/div&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="90" y="785" width="370" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
